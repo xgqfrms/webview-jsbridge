@@ -27,9 +27,11 @@ public class MainActivity extends AppCompatActivity {
     // ✅ Java 中定义的接口名，✅ 要在 js 中使用的方法名
     // webView.addJavascriptInterface(new jsMethodsObjectInterface(), "jsMethodsObjectName");
     // 4. 加载 URL (local / http server)
-    testWebView.loadUrl("file:///android_asset/index.html");
-    // ❓ android_asset
+    // testWebView.loadUrl("file:///android_asset/index.html");
+    // ❓ android_asset 相对目录
     // testWebView.loadUrl("file:///android_assets/index.html");
-    // testWebView.loadUrl("https://cdn.xgqfrms.xyz/index.html");
+    testWebView.loadUrl("https://www.cnblogs.com/xgqfrms/p/12697742.html");
+    //  testWebView.loadUrl("http://cdn.xgqfrms.xyz/index.html");
+    //  testWebView.loadUrl("https://cdn.xgqfrms.xyz/index.html");
   }
 }
