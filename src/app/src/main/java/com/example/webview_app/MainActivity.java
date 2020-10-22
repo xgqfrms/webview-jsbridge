@@ -3,6 +3,8 @@ package com.example.webview_app;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.webkit.WebView;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
   private WebView testWebView;
