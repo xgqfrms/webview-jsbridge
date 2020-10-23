@@ -1,3 +1,27 @@
+"use strict";
+
+/**
+ *
+ * @author xgqfrms
+ * @license MIT
+ * @copyright xgqfrms
+ * @created 2020-10-01
+ * @modified
+ *
+ * @description
+ * @difficulty Easy Medium Hard
+ * @complexity O(n)
+ * @augments
+ * @example
+ * @link
+ * @solutions
+ *
+ * @best_solutions
+ *
+ */
+
+const log = console.log;
+
 const html = `
 &lt;body&gt;
   &lt;header&gt;
@@ -26,3 +50,26 @@ const html = `
 `;
 
 // copy(html.replaceAll(` `, ``));
+
+// const htmlString = html.replaceAll("&lt;", "<").replaceAll("&gt;", ">").replaceAll("&quot;", "\"");
+// TypeError: html.replaceAll is not a function
+// const htmlString = html.replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/&quot;/g, "\"");
+
+let htmlString = ``;
+
+if (``.replaceAll) {
+  htmlString = html.replaceAll("&lt;", "<").replaceAll("&gt;", ">").replaceAll("&quot;", "\"");
+} else {
+  htmlString = html.replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/&quot;/g, "\"");
+}
+
+log(`htmlString =`, htmlString);
+
+log(`"".replace`, ``.replace);
+log(`"".replaceAll`, ``.replaceAll);
+/*
+
+"".replace [Function: replace]
+"".replaceAll undefined
+
+*/
