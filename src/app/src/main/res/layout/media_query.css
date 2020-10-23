@@ -1,0 +1,17 @@
+#header {
+  background: url(medium-density-image.png);
+}
+
+@media screen and (-webkit-device-pixel-ratio: 1.5) {
+  /* CSS for high-density screens */
+  #header {
+    background: url(high-density-image.png);
+  }
+}
+
+@media screen and (-webkit-device-pixel-ratio: 0.75) {
+  /* CSS for low-density screens */
+  #header {
+    background: url(low-density-image.png);
+  }
+}
