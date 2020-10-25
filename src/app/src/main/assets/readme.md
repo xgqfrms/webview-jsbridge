@@ -30,3 +30,12 @@ public class JsInterface {
 }
 
 ```
+
+
+js 调用 webview SDK 有点复杂
+
+线程不一致问题
+
+webview 调用 js 比较简单
+
+(`javascript; function_name`)
