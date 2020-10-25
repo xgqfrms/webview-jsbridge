@@ -22,10 +22,10 @@
   </header>
   <main>
     <div>
-      <input type="text" placeholder="请输入文本内容...">
+      <input type="text" id="input" placeholder="请输入文本内容...">
     </div>
     <div>
-      <button type="submit">点击</button>
+      <button type="submit" id="button">点击</button>
     </div>
   </main>
   <footer>
@@ -34,7 +34,19 @@
   <!-- js -->
   <script>
     const log = console.log;
-    //
+    const input = document.querySelector(`#input`);
+    const btn = document.querySelector(`#button`);
+    btn.addEventListener(`click`, (e) => {
+      const value = input.value;
+      log(`value =`, value);
+      // alert(value);
+      setTimeout(() => {
+        autoFillInput(`xgqfrms`);
+      }, 0);
+    });
+    function autoFillInput(str = ``) {
+      input.value = str;
+    }
   </script>
   <!-- <script src="./app.js"></script> -->
 </body>
