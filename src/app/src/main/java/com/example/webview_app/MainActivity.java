@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.webkit.WebView;
 import android.widget.TextView;
 
+//import static android.webkit.WebView.*;
+
 public class MainActivity extends AppCompatActivity {
   private WebView testWebView;
   private TextView testTextView;
@@ -48,9 +50,6 @@ public class MainActivity extends AppCompatActivity {
   private void initWidgets(Bundle savedInstanceState) {
     testWebView = findViewById(R.id.webView);
     testTextView = findViewById(R.id.textView);
-    // chrome://inspect/#devices
-    // 开启 WebView 页面 debug
-    testWebView.setWebContentsDebuggingEnabled(true);
     // 1. 开启 WebView 对 js 加载的支持
     testWebView.getSettings().setJavaScriptEnabled(true);
     // 3. WebView 上添加 js 方法的接口实现类(new 实例化)
@@ -58,16 +57,20 @@ public class MainActivity extends AppCompatActivity {
     // ✅ Java 中定义的接口名，✅ 要在 js 中使用的方法名
     // webView.addJavascriptInterface(new jsMethodsObjectInterface(), "jsMethodsObjectName");
     // 4. 加载 file:///android_asset/ URL (local html)
-    // testWebView.loadUrl("file:///android_asset/index.html");
+    testWebView.loadUrl("file:///android_asset/index.html");
     // ❓ android_asset 相对目录, ✅ android_asset !== android_assets ❌
     // 5. 加载 HTTP URL (server html)
     // testWebView.loadUrl("https://www.cnblogs.com/xgqfrms/p/12697742.html");
     // 6. 加载 HTMl 字符串
     // img 自适应 css
     // htmlString = htmlString.replaceAll("width=\"\\d+\"", "width=\"100%\"").replaceAll("height=\"\\d+\"", "height=\"auto\"");
-    htmlString = htmlString.replaceAll("&lt;", "<").replaceAll("&gt;", ">").replaceAll("&quot;", "\"");
+    // htmlString = htmlString.replaceAll("&lt;", "<").replaceAll("&gt;", ">").replaceAll("&quot;", "\"");
     // baseUrl 可以指定HTML代码片段中相关资源的相对根路径
     // public void loadDataWithBaseURL(String baseUrl, String data, String mimeType, String encoding, String historyUrl);
-    testWebView.loadDataWithBaseURL("https://xgqfrms.xyz", htmlString, "text/html", "UTF-8", null);
+    // testWebView.loadDataWithBaseURL("https://xgqfrms.xyz", htmlString, "text/html", "UTF-8", null);
+    // 🐞 1. 开启 WebView 页面 debug
+    // setWebContentsDebuggingEnabled(true);
+    testWebView.setWebContentsDebuggingEnabled(true);
+    // 🐞 2. 访问 chrome://inspect/#devices
   }
 }
