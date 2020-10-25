@@ -48,6 +48,9 @@ public class MainActivity extends AppCompatActivity {
   private void initWidgets(Bundle savedInstanceState) {
     testWebView = findViewById(R.id.webView);
     testTextView = findViewById(R.id.textView);
+    // chrome://inspect/#devices
+    // 开启 WebView 页面 debug
+    testWebView.setWebContentsDebuggingEnabled(true);
     // 1. 开启 WebView 对 js 加载的支持
     testWebView.getSettings().setJavaScriptEnabled(true);
     // 3. WebView 上添加 js 方法的接口实现类(new 实例化)
