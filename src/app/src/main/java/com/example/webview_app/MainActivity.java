@@ -57,10 +57,10 @@ public class MainActivity extends AppCompatActivity {
     // ✅ Java 中定义的接口名，✅ 要在 js 中使用的方法名
     // webView.addJavascriptInterface(new jsMethodsObjectInterface(), "jsMethodsObjectName");
     // 4. 加载 file:///android_asset/ URL (local html)
-    testWebView.loadUrl("file:///android_asset/index.html");
+    // testWebView.loadUrl("file:///android_asset/index.html");
     // ❓ android_asset 相对目录, ✅ android_asset !== android_assets ❌
     // 5. 加载 HTTP URL (server html)
-    // testWebView.loadUrl("https://www.cnblogs.com/xgqfrms/p/12697742.html");
+    testWebView.loadUrl("https://www.cnblogs.com/xgqfrms/p/12697742.html");
     // 6. 加载 HTMl 字符串
     // img 自适应 css
     // htmlString = htmlString.replaceAll("width=\"\\d+\"", "width=\"100%\"").replaceAll("height=\"\\d+\"", "height=\"auto\"");
