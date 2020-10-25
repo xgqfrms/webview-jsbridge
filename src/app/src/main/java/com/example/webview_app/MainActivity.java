@@ -3,12 +3,14 @@ package com.example.webview_app;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.webkit.WebView;
 import android.widget.TextView;
 
 //import static android.webkit.WebView.*;
 
 public class MainActivity extends AppCompatActivity {
+  private static final String TAG = "MainActivity";
   private WebView testWebView;
   private TextView testTextView;
   // Android 如何使用 WebView 加载 HTML 字符串和处理转译字符
@@ -45,6 +47,7 @@ public class MainActivity extends AppCompatActivity {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_main);
     initWidgets(savedInstanceState);
+    Log.d(TAG, "主进程 🚀");
   }
 
   private void initWidgets(Bundle savedInstanceState) {

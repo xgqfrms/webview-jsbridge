@@ -9,6 +9,8 @@ public class JsInterface {
   // 注解
   @JavascriptInterface
   public void setValue(String value) {
+    // Log.d(tag, msg);
+    Log.d("JsInterface", "JS 接口类，WebView 进程 ✅");
     Log.d(TAG, "setValue: " + value);
   }
 }
